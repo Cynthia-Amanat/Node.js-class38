@@ -1,20 +1,21 @@
 import express from "express";
+import { getWeather } from "./controllers/getWeather.js";
+import { engine } from "express-handlebars";
 
 const app = express();
-
 app.use(express.json());
+app.engine("handlebars", engine());
+app.set("views", "./views");
+app.set("view engine", "handlebars");
+app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
-  res.send("<h1>hello from backend to frontend!</h1>");
+  res.render("home", {
+    title: "Weather App",
+  });
 });
 
-app.post("/weather", (req, res) => {
-  const cityName = req.body.cityName;
-  if (!cityName) {
-    res.status(400).json({ message: "Opp Please enter Valid city name " });
-  }
-  res.status(200).json({ cityName });
-});
+app.post("/weather", getWeather);
 
 const PORT = process.env.PORT || 3000;
 
