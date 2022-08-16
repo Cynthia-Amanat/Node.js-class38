@@ -1,7 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
-
-/* $border-radius: 20px; */
+ @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+ @import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
 body {
     color: #333333;
     font-family: Arial, Helvetica, sans-serif;
@@ -13,6 +11,7 @@ body {
     min-height: 100vh;
 }
 
+
 .main-content {
     flex-grow: 1;
 }
@@ -22,11 +21,32 @@ header {
     margin-bottom: 48px;
 }
 
+h1{
+    font-size: 50x;
+    text-align: center;
+    padding-top:20% ;
+}
+
 h2 {
     font-size: 64px;
     margin-bottom: 16px;
 }
+h3 {
+    padding: 30px;
+    font-size: 30px;
+}
 
+#input{
+width:80%;
+height: 50px;
+border: #080705 solid 1px;
+border-radius: 25px ;
+}
+#getWeather{
+   width: 30%;
+   height: 50px; 
+   border-radius: 25px ;
+}
 
 .widget {
     position: absolute;
@@ -111,6 +131,9 @@ h2 {
     font-weight: 100;
 }
 
+.description{
+    display: flex;
+}
 .widget .weatherInfo .description .place {
     font-size: 15px;
 }
@@ -124,10 +147,12 @@ h2 {
     justify-content: space-around;
     align-items: center;
     color: white;
-    font-size: 30px;
+    font-size: 10px;
     font-weight: 800;
 }
-
+.date h4{
+    padding: 10px;
+}
 p {
     position: fixed;
     bottom: 0%;
@@ -138,4 +163,6 @@ p a {
     text-decoration: none;
     color: #E4D6A7;
     font-size: 10px;
-}
+} 
+
+
